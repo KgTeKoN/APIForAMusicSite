@@ -1,9 +1,9 @@
-import { App } from "./app";
+import { App } from './app';
 
-const app = new App;
+const app = new App();
 
 async function bootstrap(): Promise<void> {
-    await app.init();
+	await app.init();
 }
 
 bootstrap();
