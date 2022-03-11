@@ -1,7 +1,7 @@
 {
   "name": "api-music",
   "version": "1.0.0",
-  "description": "\"API for a music site",
+  "description": "API for a music site",
   "main": "src/main.ts",
   "scripts": {
     "start": "node ./build/main.js",
