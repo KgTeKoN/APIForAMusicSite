@@ -1,5 +1,6 @@
 import express, { Express } from 'express';
 import { Server } from 'http';
+import { startServer } from './logger/loggerServer';
 
 export class App {
 	port: Number;
@@ -13,7 +14,7 @@ export class App {
 
 	async init(): Promise<void> {
 		this.server = this.app.listen(this.port);
-		console.log(`Server was started on http://localhost:${this.port}`);
+		startServer(this.port as number);
 	}
 
 	close(): void {
