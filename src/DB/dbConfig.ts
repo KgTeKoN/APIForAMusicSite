@@ -5,6 +5,5 @@ export const pool = new Pool( {
 	password: "2703",
 	host: "localhost",
 	port: 5432,
-	database: "Music_API"
+	database: "music_api"
 });
-
