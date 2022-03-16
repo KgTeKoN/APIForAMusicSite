@@ -1,14 +1,11 @@
-import { pool } from '../../DB/dbConfig';
 import { userControllerType } from '../../Types/userControllerType';
+import { userUpdateHandler } from '../../handlers/users/userUpdateHandler';
 
 export const userUpdate: userControllerType = async (req, res) => {
-	const { name, email, password, isAuthor } = req.body;
-	const { id } = req.params;
 	try {
-		const userUpdate = await pool.query(
-			`UPDATE users SET name = $1, mail = $2, password = $3, is_Author = $4 WHERE id = $5 RETURNING *`,
-			[name, email, password, isAuthor, id],
-		);
+		const { name, email, password, isAuthor } = req.body;
+		const { id } = req.params;
+		const userUpdate = await userUpdateHandler(name, email, password, isAuthor, id)
 		res.json(userUpdate.rows[0]);
 	} catch (e) {
 		if (typeof e === 'string') {

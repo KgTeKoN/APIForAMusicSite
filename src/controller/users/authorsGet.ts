@@ -1,9 +1,9 @@
-import { pool } from '../../DB/dbConfig';
 import { userControllerType } from '../../Types/userControllerType';
+import { authorsGetHandler } from '../../handlers/users/authorsGetHandler';
 
 export const authorsGet: userControllerType = async (_req, res) => {
 	try {
-		const authors = await pool.query(`SELECT * FROM users WHERE is_author = $1`, ['true']);
+		const authors = await authorsGetHandler();
 		res.json(authors.rows);
 	} catch (e) {
 		if (typeof e === 'string') {

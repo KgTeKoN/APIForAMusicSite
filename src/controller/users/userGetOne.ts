@@ -1,10 +1,10 @@
-import { pool } from '../../DB/dbConfig';
 import { userControllerType } from '../../Types/userControllerType';
+import { userGetOneHandler } from '../../handlers/users/userGetOneHandler';
 
 export const userGetOne:userControllerType = async (req, res) => {
-	const { id } = req.params;
 	try {
-		const user = await pool.query(`SELECT * FROM users WHERE id = $1`, [id]);
+		const { id } = req.params;
+		const user = await userGetOneHandler(id);
 		res.json(user.rows[0]);
 	} catch (e) {
 		if (typeof e === 'string') {

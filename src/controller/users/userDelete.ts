@@ -1,10 +1,10 @@
-import { pool } from '../../DB/dbConfig';
 import { userControllerType } from '../../Types/userControllerType';
+import { userDeleteHandler } from '../../handlers/users/userDeleteHandler';
 
 export const userDelete: userControllerType = async (req, res) => {
-	const { id } = req.params;
 	try {
-		const userDelete = await pool.query(`DELETE FROM users WHERE id = $1`, [id]);
+		const { id } = req.params;
+		const userDelete = await userDeleteHandler(id);
 		res.json(userDelete.rows[0]);
 	} catch (e) {
 		if (typeof e === 'string') {
