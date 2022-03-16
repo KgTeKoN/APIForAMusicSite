@@ -12,4 +12,4 @@ export const authorsGet: userControllerType = async (_req, res) => {
 			res.json(e.message);
 		}
 	}
-}
+};

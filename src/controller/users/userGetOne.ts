@@ -1,7 +1,7 @@
 import { userControllerType } from '../../Types/userControllerType';
 import { userGetOneHandler } from '../../handlers/users/userGetOneHandler';
 
-export const userGetOne:userControllerType = async (req, res) => {
+export const userGetOne: userControllerType = async (req, res) => {
 	try {
 		const { id } = req.params;
 		const user = await userGetOneHandler(id);
@@ -13,4 +13,4 @@ export const userGetOne:userControllerType = async (req, res) => {
 			res.json(e.message);
 		}
 	}
-}
+};

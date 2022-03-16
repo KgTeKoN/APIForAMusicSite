@@ -13,4 +13,4 @@ export const userDelete: userControllerType = async (req, res) => {
 			res.json(e.message);
 		}
 	}
-}
+};

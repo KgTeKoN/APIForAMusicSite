@@ -13,4 +13,4 @@ export const userCreate: userControllerType = async (req, res) => {
 			res.json(e.message);
 		}
 	}
-}
+};
