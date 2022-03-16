@@ -6,7 +6,6 @@ import { userAuthorsGetRoute } from './routes/Users/userAuthorsGetRoute';
 import { userDeleteRoute } from './routes/Users/userDeleteRoute';
 import { userUpdateRoute } from './routes/Users/userUpdateRoute';
 
-
 const app = new App();
 
 app.app.use(express.json());
