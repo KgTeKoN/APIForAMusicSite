@@ -1,7 +1,7 @@
 import { pool } from '../../DB/dbConfig';
-import { Request, Response } from 'express';
+import { userControllerType } from '../../Types/userControllerType';
 
-export async function userGetOne(req: Request, res: Response): Promise<void> {
+export const userGetOne:userControllerType = async (req, res) => {
 	const { id } = req.params;
 	try {
 		const user = await pool.query(`SELECT * FROM users WHERE id = $1`, [id]);

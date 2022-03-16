@@ -1,7 +1,7 @@
 import { pool } from '../../DB/dbConfig';
-import { Request, Response } from 'express';
+import { userControllerType } from '../../Types/userControllerType';
 
-export async function userDelete(req: Request, res: Response): Promise<void> {
+export const userDelete: userControllerType = async (req, res) => {
 	const { id } = req.params;
 	try {
 		const userDelete = await pool.query(`DELETE FROM users WHERE id = $1`, [id]);

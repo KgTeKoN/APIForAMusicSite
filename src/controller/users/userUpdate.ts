@@ -1,7 +1,7 @@
 import { pool } from '../../DB/dbConfig';
-import { Request, Response } from 'express';
+import { userControllerType } from '../../Types/userControllerType';
 
-export async function userUpdate(req: Request, res: Response): Promise<void> {
+export const userUpdate: userControllerType = async (req, res) => {
 	const { name, email, password, isAuthor } = req.body;
 	const { id } = req.params;
 	try {
