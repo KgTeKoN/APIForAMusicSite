@@ -32,4 +32,4 @@ CREATE TABLE To_music(
     music_id INTEGER,
     FOREIGN KEY (playlist_id) REFERENCES Playlist (id),
     FOREIGN KEY (music_id) REFERENCES Music (id)
-)
+);
